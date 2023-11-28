@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Black"
+    tools:context=".MainActivity">
+
+    <!--Views on the first row-->
+    <TextView
+        android:id="@+id/tvheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/Tip_Calculator"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBillLabel"
+        style="@style/LabelStyle"
+
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:minWidth="120dp"
+
+        android:text="@string/label_bill"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvheading" />
+
+    <EditText
+        android:id="@+id/etNDAmtBill"
+        style="@style/InputStyle"
+
+        android:ems="7"
+        android:gravity="center"
+        android:hint="@string/amount_bill_hint"
+        android:inputType="numberDecimal"
+
+        android:textColor="#F6F5F5"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvBillLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvBillLabel" />
+
+    <!--Views on the second row-->
+    <TextView
+        android:id="@+id/tvTipLabel"
+        style="@style/LabelStyle"
+
+        android:layout_marginTop="20dp"
+        android:minWidth="120dp"
+        android:text="@string/label_tip_percent"
+        android:textColor="@android:color/black"
+
+        app:layout_constraintStart_toStartOf="@+id/tvBillLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvBillLabel" />
+
+    <EditText
+        android:id="@+id/etTipNumber"
+        style="@style/InputStyle"
+
+        android:ems="7"
+        android:gravity="center"
+        android:hint="@string/amount_tip_percent_hint"
+        android:inputType="number"
+
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FAFAFA"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTipLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvTipLabel" />
+    <!--View on the third row-->
+
+    <View
+        android:id="@+id/red_line"
+        android:layout_width="match_parent"
+        android:layout_height="5dip"
+        android:layout_marginTop="30dp"
+        android:background="@color/red"
+        app:layout_constraintEnd_toEndOf="@+id/etTipNumber"
+        app:layout_constraintStart_toStartOf="@+id/tvTipLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvTipLabel" />
+    <!--Views on the fourth row-->
+    <TextView
+        android:id="@+id/tvTipAmtLabel"
+        style="@style/LabelStyle"
+
+        android:layout_marginStart="30dp"
+
+        android:layout_marginTop="30dp"
+        android:minWidth="120dp"
+
+        android:text="@string/label_amt_tip"
+
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/red_line"
+        app:layout_constraintTop_toBottomOf="@+id/red_line" />
+
+    <TextView
+        android:id="@+id/tvTipAmt"
+        style="@style/OutputStyle"
+
+        android:layout_marginLeft="10dp"
+
+        android:gravity="center"
+        android:minWidth="220dp"
+
+        app:layout_constraintBaseline_toBaselineOf="@id/tvTipAmtLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvTipAmtLabel"
+        app:layout_constraintTop_toBottomOf="@id/red_line" />
+
+    <!--Views on the fifth row-->
+
+    <TextView
+        android:id="@+id/tvTotalLabel"
+        style="@style/LabelStyle"
+
+        android:layout_marginTop="20dp"
+        android:minWidth="120dp"
+        android:text="@string/label_total"
+        android:textColor="@android:color/black"
+
+        app:layout_constraintStart_toStartOf="@+id/tvTipAmtLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipAmtLabel" />
+
+    <TextView
+        android:id="@+id/tvTotalAmt"
+        style="@style/OutputStyle"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:minWidth="220dp"
+
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvTotalLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvTipAmt" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/ButtonStyle"
+
+        android:layout_marginTop="50dp"
+        android:onClick="calculate"
+        android:text="@string/Calculate_Button"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalLabel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
